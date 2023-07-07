@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import ProtectedRoutes from './functions/ProtectedRoutes'
 
 const App = () => {
   return <BrowserRouter>
     <Routes>
-      <Route element={null}>
+      <Route element={<ProtectedRoutes />}>
         <Route path='/' element={<Navigate to='/home' />} />
 
         <Route path='/home' element={null} />
